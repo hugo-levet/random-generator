@@ -1,0 +1,227 @@
+@font-face {
+    font-family: "Casino";
+    src: url("../fonts/Casino.ttf");
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: url("../fonts/Comfortaa-VariableFont_wght.ttf");
+}
+
+* {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    background-color: #ff2039;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: "Comfortaa";
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+#wheel {
+    --border-color: #ffd700;
+    height: 180px;
+    border-radius: 10px;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    font-family: "Volcano King";
+    font-family: "Casino";
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3em;
+    border: var(--border-color) solid 10px;
+    z-index: 1;
+    max-width: 100%;
+}
+
+#wheel:after {
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 29px solid transparent;
+    border-right: 50px solid var(--border-color);
+    border-bottom: 29px solid transparent;
+}
+
+#wheel:before {
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 29px solid transparent;
+    border-bottom: 29px solid transparent;
+    border-left: 50px solid var(--border-color);
+}
+
+#start {
+    background: none;
+    border: none;
+    font-family: "Volcano King";
+    font-family: "Casino";
+    font-size: 3em;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+}
+
+#randomElmts:not(div) {
+    display: none;
+}
+
+.randomElmt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#listElmts {
+    border-radius: 5px;
+    background: white;
+    padding: 15px;
+}
+
+.randomElmt>a {
+    background-color: #ff2039;
+    background-image: url('../img/bin_icon.png');
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#addElmt {
+    display: flex;
+}
+
+#addElmt input {
+    border: solid 2px black;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    box-sizing: unset;
+    height: 20px;
+    outline: none;
+    padding: 1px 5px;
+    font-family: "Comfortaa";
+}
+
+#addElmt button {
+    background-color: #ffd700;
+    padding: 5px 10px;
+    border: none;
+    font-family: "Comfortaa";
+    border-radius: 0 5px 5px 0;
+    height: 26px;
+    cursor: pointer;
+    font-size: 0.8em;
+    outline: none;
+}
+
+#wheelContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+}
+
+#restart {
+    font-family: "Comfortaa";
+    font-size: 1em;
+    border-radius: 0 0 10px 10px;
+    background-color: #ffd700;
+    height: 50px;
+    top: -50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 0;
+    cursor: pointer;
+    transition: top ease 1s;
+    outline: none;
+}
+
+@keyframes finish {
+    0% {
+        --border-color: #CEDDC3;
+    }
+    10% {
+        --border-color: #A6D283;
+    }
+    20% {
+        --border-color: #56C6A1;
+    }
+    30% {
+        --border-color: #B0BE23;
+    }
+    40% {
+        --border-color: #7FE577;
+    }
+    50% {
+        --border-color: #0CC255;
+    }
+    60% {
+        --border-color: #53D045;
+    }
+    70% {
+        --border-color: #95971D;
+    }
+    80% {
+        --border-color: #55B942;
+    }
+    90% {
+        --border-color: #991CDF;
+    }
+    100% {
+        --border-color: #183E45;
+    }
+}
+
+@media all and (max-width: 650px) {
+    #wheel {
+        font-size: 2em;
+    }
+}
+
+@media all and (max-width: 500px) {
+    #wheel {
+        font-size: 1em;
+    }
+}
+
+@media all and (max-width: 350px) {
+    #wheel {
+        justify-content: center;
+    }
+    #wheel:before, #wheel:after {
+        content: none;
+    }
+    #addElmt {
+        flex-direction: column;
+    }
+    #addElmt button {
+        border-radius: 5px;
+    }
+    #addElmt input {
+        border-right: solid 2px black;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+}
