@@ -21,7 +21,7 @@ html, body {
 body {
     display: flex;
     align-items: center;
-    background-color: #ff2039;
+    background-color: #b30703;
     flex-direction: row;
     justify-content: space-around;
     font-family: "Comfortaa";
